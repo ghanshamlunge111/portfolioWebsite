@@ -1156,8 +1156,8 @@ section .container {
 .resume-btn {
   background-color: #15bb62; /* Match your website's primary color */
   color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 5px 10px;
+  border-radius: 7px;
   text-decoration: none;
   transition: all 0.3s ease;
   display: inline-flex; /* Align icon and text */

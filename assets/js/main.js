@@ -184,6 +184,30 @@
     }
   });
 
+  // Downlaod Resume Button
+  document.addEventListener("DOMContentLoaded", () => {
+    const resumeButton = document.getElementById("resume-button");
+    const navLinks = document.querySelectorAll("#navbar .nav-link");
+
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        // Check if the clicked link is "Home"
+        if (link.getAttribute("href") === "#header") {
+          resumeButton.style.display = "block"; // Show button
+        } else {
+          resumeButton.style.display = "none"; // Hide button
+        }
+      });
+    });
+
+    // Ensure the button is visible initially on the Home page
+    if (window.location.hash === "" || window.location.hash === "#header") {
+      resumeButton.style.display = "block";
+    } else {
+      resumeButton.style.display = "none";
+    }
+  });
+
   /**
    * Porfolio isotope and filter
    */
