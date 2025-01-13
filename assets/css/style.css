@@ -1154,19 +1154,27 @@ section .container {
 
 /* Style the resume button */
 .resume-btn {
-  background-color: #007bff; /* Match your website's primary color */
+  background-color: #15bb62; /* Match your website's primary color */
   color: #fff;
   padding: 10px 20px;
   border-radius: 5px;
   text-decoration: none;
   transition: all 0.3s ease;
+  display: inline-flex; /* Align icon and text */
+  align-items: center; /* Vertically align icon with text */
+  gap: 10px; /* Space between icon and text */
 }
 
 /* Hover effect for the button */
 .resume-btn:hover {
-  background-color: #0056b3; /* Slightly darker shade for hover */
+  background-color: #dd6311; /* Slightly darker shade for hover */
   color: #fff; /* Keep the text white */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add subtle shadow on hover */
+}
+
+/* Icon size and alignment */
+.resume-btn i {
+  font-size: 1.2rem; /* Adjust icon size */
 }
 
 @keyframes animate-loading {
