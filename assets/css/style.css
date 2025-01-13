@@ -37,7 +37,7 @@ body::before {
 }
 
 a {
-  color: #18d26e;
+  color: #eb6816;
   text-decoration: none;
 }
 
@@ -103,6 +103,10 @@ h6 {
 #header img {
   padding: 0;
   margin: 0;
+}
+
+.social-links {
+  margin-bottom: 40px;
 }
 
 #header .social-links {
@@ -1146,6 +1150,23 @@ section .container {
 
 .contact .php-email-form button[type=submit]:hover {
   background: #15bb62;
+}
+
+/* Style the resume button */
+.resume-btn {
+  background-color: #007bff; /* Match your website's primary color */
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for the button */
+.resume-btn:hover {
+  background-color: #0056b3; /* Slightly darker shade for hover */
+  color: #fff; /* Keep the text white */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add subtle shadow on hover */
 }
 
 @keyframes animate-loading {
