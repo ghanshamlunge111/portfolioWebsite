@@ -5,7 +5,7 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
-(function() {
+(function () {
   "use strict";
 
   /**
@@ -48,7 +48,7 @@
   /**
    * Mobile nav toggle
    */
-  on('click', '.mobile-nav-toggle', function(e) {
+  on('click', '.mobile-nav-toggle', function (e) {
     select('#navbar').classList.toggle('navbar-mobile')
     this.classList.toggle('bi-list')
     this.classList.toggle('bi-x')
@@ -57,7 +57,7 @@
   /**
    * Scrool with ofset on links with a class name .scrollto
    */
-  on('click', '#navbar .nav-link', function(e) {
+  on('click', '#navbar .nav-link', function (e) {
     let section = select(this.hash)
     if (section) {
       e.preventDefault()
@@ -90,7 +90,7 @@
 
       if (!header.classList.contains('header-top')) {
         header.classList.add('header-top')
-        setTimeout(function() {
+        setTimeout(function () {
           sections.forEach((item) => {
             item.classList.remove('section-show')
           })
@@ -129,7 +129,7 @@
           }
         })
 
-        setTimeout(function() {
+        setTimeout(function () {
           initial_nav.classList.add('section-show')
         }, 350);
 
@@ -146,7 +146,7 @@
     new Waypoint({
       element: skilsContent,
       offset: '80%',
-      handler: function(direction) {
+      handler: function (direction) {
         let progress = select('.progress .progress-bar', true);
         progress.forEach((el) => {
           el.style.width = el.getAttribute('aria-valuenow') + '%'
@@ -221,9 +221,9 @@
 
       let portfolioFilters = select('#portfolio-flters li', true);
 
-      on('click', '#portfolio-flters li', function(e) {
+      on('click', '#portfolio-flters li', function (e) {
         e.preventDefault();
-        portfolioFilters.forEach(function(el) {
+        portfolioFilters.forEach(function (el) {
           el.classList.remove('filter-active');
         });
         this.classList.add('filter-active');
@@ -251,6 +251,44 @@
     width: '90%',
     height: '90vh'
   });
+
+  /**
+ * resetForm 
+ */
+  function handleFormSubmit(event) {
+    event.preventDefault();
+
+    // Form submission
+    var form = event.target;
+    var formData = new FormData(form);
+
+    // Sending the form data using Fetch API
+    fetch(form.action, {
+      method: form.method,
+      body: formData,
+    })
+      .then(response => response.text())
+      .then(data => {
+        document.querySelector('.loading').style.display = 'none';
+        if (data.includes('sent-message')) {
+          document.querySelector('.sent-message').style.display = 'block';
+          form.reset(); // Reset all form fields
+        } else {
+          document.querySelector('.error-message').style.display = 'block';
+        }
+      })
+      .catch(error => {
+        document.querySelector('.loading').style.display = 'none';
+        document.querySelector('.error-message').style.display = 'block';
+      });
+
+    // Show loading
+    document.querySelector('.loading').style.display = 'block';
+    document.querySelector('.sent-message').style.display = 'none';
+    document.querySelector('.error-message').style.display = 'none';
+  }
+
+
 
   /**
    * Portfolio details slider
